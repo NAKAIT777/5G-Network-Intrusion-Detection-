@@ -35,12 +35,12 @@ The increasing adoption of 5G networks introduces new cybersecurity challenges d
 
 This project explores machine learning techniques for identifying potential intrusions in 5G network traffic through a structured, six-phase pipeline.
 
-The workflow progresses from raw data preprocessing to model evaluation, explainability, mitigation analysis, and visualization. It aims to make intrusion detection results easier to evaluate and interpret.
+The workflow progresses from raw data preprocessing to model evaluation, explainability, mitigation analysis, and visualization.
 
 ## 🎯 Project Objectives
 
 - **Data Preprocessing:** Clean and prepare network traffic data for machine learning.
-- **Class Imbalance Handling:** Address imbalanced class distributions so minority intrusion classes receive appropriate consideration.
+- **Class Imbalance Handling:** Address imbalanced class distributions.
 - **Model Training:** Train and compare classification models for intrusion detection.
 - **Performance Evaluation:** Analyze model performance using evaluation metrics and ROC curves.
 - **Explainable AI:** Apply SHAP to understand feature contributions to model predictions.
@@ -101,7 +101,7 @@ The project is divided into six modular phases.
 ## 📂 Repository Structure
 
 ```text
-5G-Intrustion-Detection/
+5G-Network-Intrusion-Detection-/
 │
 ├── phase1_ingestion.py
 ├── phase2_imbalance.py
@@ -136,15 +136,13 @@ The project is divided into six modular phases.
 
 ## 📊 Visualizations
 
-The repository includes visual outputs for examining model performance and understanding model predictions.
-
 ### 1. ROC Curve
 
 **File:** `roc_curve.png`
 
 ![ROC Curve](roc_curve.png)
 
-The Receiver Operating Characteristic (ROC) curve illustrates the relationship between the true positive rate and the false positive rate across classification thresholds. It can help assess and compare model discrimination performance.
+The Receiver Operating Characteristic (ROC) curve illustrates the relationship between the true positive rate and false positive rate across classification thresholds.
 
 ### 2. SHAP Feature Importance
 
@@ -152,7 +150,7 @@ The Receiver Operating Characteristic (ROC) curve illustrates the relationship b
 
 ![SHAP Feature Importance](shap_bar_chart.png)
 
-The SHAP bar chart summarizes feature importance based on SHAP values, helping identify the input features that contribute to model predictions.
+The SHAP bar chart summarizes feature importance based on SHAP values, helping identify which input features contribute to model predictions.
 
 ### 3. SHAP Summary Beeswarm Plot
 
@@ -160,13 +158,11 @@ The SHAP bar chart summarizes feature importance based on SHAP values, helping i
 
 ![SHAP Summary Beeswarm Plot](shap_summary_beeswarm.png)
 
-The beeswarm plot displays the distribution of feature contributions across predictions. It helps illustrate how feature values influence model outputs.
+The beeswarm plot displays the distribution of feature contributions across predictions, helping illustrate how feature values influence model outputs.
 
 ---
 
 ## 🧰 Technology Stack
-
-The project uses Python and machine learning libraries for data processing, model development, explainability, and visualization.
 
 | Technology | Application |
 |---|---|
@@ -178,7 +174,7 @@ The project uses Python and machine learning libraries for data processing, mode
 | SHAP | Model explainability |
 | Matplotlib / Seaborn | Data visualization, where used |
 
-The exact packages required depend on the imports and implementations in the individual scripts.
+The exact dependencies depend on the libraries imported by the individual scripts.
 
 ---
 
@@ -188,14 +184,14 @@ The exact packages required depend on the imports and implementations in the ind
 
 - Python installed on your system.
 - Git installed on your system.
-- Access to the dataset required by the pipeline.
+- Access to the required dataset.
 - The Python dependencies used by the project.
 
 ### Step 1: Clone the Repository
 
 ```bash
-git clone https://github.com/NAKAIT777/5G-Intrustion-Detection.git
-cd 5G-Intrustion-Detection
+git clone https://github.com/NAKAIT777/5G-Network-Intrusion-Detection-.git
+cd 5G-Network-Intrusion-Detection-
 ```
 
 ### Step 2: Create a Virtual Environment
@@ -216,25 +212,25 @@ source venv/bin/activate
 
 ### Step 3: Install Dependencies
 
-If a `requirements.txt` file is added to the repository, install the dependencies with:
+If the repository contains a `requirements.txt` file:
 
 ```bash
 pip install -r requirements.txt
 ```
 
-Otherwise, install the packages required by your scripts. For example:
+Otherwise, install the required packages individually. For example:
 
 ```bash
 pip install pandas numpy scikit-learn matplotlib seaborn shap tensorflow
 ```
 
-Install TensorFlow and Seaborn only if your implementation requires them. Ensure the selected package versions are compatible with your Python environment.
+Install only the libraries required by your implementation and use compatible package versions.
 
 ---
 
 ## ▶️ Running the Pipeline
 
-Execute the scripts from the repository's root directory, following the pipeline's intended order.
+Run the scripts from the repository's root directory, following the intended execution order.
 
 **Phase 1 — Data Ingestion and Preprocessing**
 
@@ -280,7 +276,7 @@ python phase6_visuals.py
 
 The project uses `Combined.csv` as its primary dataset, as described in the project configuration.
 
-Because the dataset is too large to include in the GitHub repository, it is excluded through `.gitignore`.
+Because the dataset exceeds GitHub's file size limit, it is excluded through `.gitignore`.
 
 Before running the pipeline:
 
@@ -289,13 +285,11 @@ Before running the pipeline:
 3. Verify that the dataset columns and format match the preprocessing logic.
 4. Confirm that the file is accessible before executing the pipeline.
 
-**Important:** The dataset is not included in this repository. Add the original dataset source or instructions for obtaining access if permitted.
+**Important:** The dataset is not included in this repository. Add the dataset source or instructions for obtaining access if permitted.
 
 ---
 
 ## 🔮 Future Enhancements
-
-Potential directions for extending the project include:
 
 - **Real-Time Intrusion Detection:** Integrate network traffic streaming for continuous monitoring.
 - **Advanced Deep Learning Models:** Explore LSTM and Transformer-based architectures for temporal attack pattern analysis.
