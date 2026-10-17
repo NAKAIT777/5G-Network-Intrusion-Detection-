@@ -53,6 +53,7 @@ The workflow progresses from raw data preprocessing to model evaluation, explain
 
 The project is divided into six modular phases.
 
+<<<<<<< HEAD
 | Phase | Script                     | Description                                              |
 | :---: | -------------------------- | -------------------------------------------------------- |
 |   1   | `phase1_ingestion.py`      | Loads, cleans, and preprocesses the dataset.             |
@@ -61,6 +62,16 @@ The project is divided into six modular phases.
 |   4   | `phase4_explainability.py` | Uses SHAP to interpret model predictions.                |
 |   5   | `phase5_mitigation.py`     | Explores threat mitigation and defensive strategies.     |
 |   6   | `phase6_visuals.py`        | Generates performance and explainability visualizations. |
+=======
+| Phase | Script | Description |
+|:---:|---|---|
+| 1 | `phase1_ingestion.py` | Loads, cleans, and preprocesses the dataset. |
+| 2 | `phase2_imbalance.py` | Handles class imbalance in network traffic data. |
+| 3 | `phase3_models.py` | Trains and compares machine learning classifiers. |
+| 4 | `phase4_explainability.py` | Uses SHAP to interpret model predictions. |
+| 5 | `phase5_mitigation.py` | Explores threat mitigation and defensive strategies. |
+| 6 | `phase6_visuals.py` | Generates performance and explainability visualizations. |
+>>>>>>> 4d72070b0b56e6f20dde4a7e89e0113f20d7c505
 
 ### 🔄 Workflow
 
@@ -119,6 +130,7 @@ The project is divided into six modular phases.
 
 ### File Descriptions
 
+<<<<<<< HEAD
 | File                        | Purpose                                       |
 | --------------------------- | --------------------------------------------- |
 | `phase1_ingestion.py`       | Data loading and preprocessing                |
@@ -131,6 +143,20 @@ The project is divided into six modular phases.
 | `shap_bar_chart.png`        | SHAP feature importance plot                  |
 | `shap_summary_beeswarm.png` | SHAP summary beeswarm plot                    |
 | `.gitignore`                | Excludes specified files from version control |
+=======
+| File | Purpose |
+|---|---|
+| `phase1_ingestion.py` | Data loading and preprocessing |
+| `phase2_imbalance.py` | Class imbalance handling |
+| `phase3_models.py` | Model training and comparison |
+| `phase4_explainability.py` | SHAP-based model interpretation |
+| `phase5_mitigation.py` | Threat mitigation analysis |
+| `phase6_visuals.py` | Visualization generation |
+| `roc_curve.png` | ROC curve visualization |
+| `shap_bar_chart.png` | SHAP feature importance plot |
+| `shap_summary_beeswarm.png` | SHAP summary beeswarm plot |
+| `.gitignore` | Excludes specified files from version control |
+>>>>>>> 4d72070b0b56e6f20dde4a7e89e0113f20d7c505
 
 ---
 
@@ -164,6 +190,7 @@ The beeswarm plot displays the distribution of feature contributions across pred
 
 ## 🧰 Technology Stack
 
+<<<<<<< HEAD
 | Technology           | Application                                  |
 | -------------------- | -------------------------------------------- |
 | Python               | Core implementation                          |
@@ -173,6 +200,17 @@ The beeswarm plot displays the distribution of feature contributions across pred
 | TensorFlow / Keras   | Deep learning, if used by the implementation |
 | SHAP                 | Model explainability                         |
 | Matplotlib / Seaborn | Data visualization, where used               |
+=======
+| Technology | Application |
+|---|---|
+| Python | Core implementation |
+| Pandas | Data manipulation and preprocessing |
+| NumPy | Numerical operations |
+| Scikit-learn | Machine learning and evaluation |
+| TensorFlow / Keras | Deep learning, if used by the implementation |
+| SHAP | Model explainability |
+| Matplotlib / Seaborn | Data visualization, where used |
+>>>>>>> 4d72070b0b56e6f20dde4a7e89e0113f20d7c505
 
 The exact dependencies depend on the libraries imported by the individual scripts.
 
