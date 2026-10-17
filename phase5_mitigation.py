@@ -30,6 +30,9 @@ def extract_specific_attack_rule(file_path, attack_name, top_features):
     print(f"==========================================")
     
     X, y, target_encoder = load_and_preprocess(file_path)
+    # CHANGED: same -1 "not applicable" marker as phase4, so rule thresholds
+    # are computed on the same representation the stability audit used.
+    X = X.fillna(-1)
     
     # Get integer labels
     benign_idx = list(target_encoder.classes_).index('Benign')

@@ -86,18 +86,25 @@ def prepare_data_splits(X, y):
     
     return X_train_scaled, X_test_scaled, y_train, y_test
 
-def apply_resampling(X_train, y_train, method='smote'):
+def apply_resampling(X_train, y_train, method='smote', cap=30000):
     """
     Applies oversampling techniques strictly to the training data.
     Methods: 'smote', 'adasyn', or 'none'
     """
+    # CHANGED: by default SMOTE/ADASYN raise EVERY minority class up to the size
+    # of the biggest class (~334K rows here), which inflated the training set
+    # from ~851K to ~3M rows - slow, memory-hungry, and mostly synthetic data.
+    # Now only genuinely rare classes are topped up to `cap` rows each.
+    counts = pd.Series(y_train).value_counts()
+    sampling_strategy = {cls: cap for cls, cnt in counts.items() if cnt < cap}
+
     if method == 'smote':
-        print("\nApplying SMOTE resampling on training set...")
-        resampler = SMOTE(random_state=42)
+        print(f"\nApplying SMOTE resampling on training set (cap={cap} per rare class)...")
+        resampler = SMOTE(sampling_strategy=sampling_strategy, random_state=42)
         X_res, y_res = resampler.fit_resample(X_train, y_train)
     elif method == 'adasyn':
-        print("\nApplying ADASYN resampling on training set...")
-        resampler = ADASYN(random_state=42)
+        print(f"\nApplying ADASYN resampling on training set (cap={cap} per rare class)...")
+        resampler = ADASYN(sampling_strategy=sampling_strategy, random_state=42)
         X_res, y_res = resampler.fit_resample(X_train, y_train)
     else:
         print("\nUsing original un-resampled training data...")
